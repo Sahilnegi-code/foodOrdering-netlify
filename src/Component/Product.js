@@ -9,7 +9,13 @@ export default function Product() {
 
 
 useEffect(()=>{
-    fetch('/api/products')
+    fetch('/api/products',{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+       )
     .then(response=>response.json())
     .then(products=>{
         setProductItem(products)
